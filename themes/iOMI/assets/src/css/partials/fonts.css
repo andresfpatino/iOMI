@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Dexa Pro';    
+    src: url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.eot');
+    src: url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.woff2') format('woff2'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.woff') format('woff'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.ttf') format('truetype'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.svg#DexaProCnRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+@font-face {
+    font-family: 'Dexa Pro';
+    src: url('/assets/src/css/fonts/dexaPro/DexaProCnBold.eot');
+    src: url('/assets/src/css/fonts/dexaPro/DexaProCnBold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.woff2') format('woff2'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.woff') format('woff'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.ttf') format('truetype'),
+        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.svg#FONTSPRINGDEMO-DexaProCnBold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('/assets/src/css/fonts/druk/Druk-Medium.eot');
+    src: url('/assets/src/css/fonts/druk/Druk-Medium.eot?#iefix') format('embedded-opentype'),
+        url('/assets/src/css/fonts/druk/Druk-Medium.woff2') format('woff2'),
+        url('/assets/src/css/fonts/druk/Druk-Medium.woff') format('woff'),
+        url('/assets/src/css/fonts/druk/Druk-Medium.ttf') format('truetype'),
+        url('/assets/src/css/fonts/druk/Druk-Medium.svg#Druk-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('/assets/src/css/fonts/druk/Druk-Bold.eot');
+    src: url('/assets/src/css/fonts/druk/Druk-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/src/css/fonts/druk/Druk-Bold.woff2') format('woff2'),
+        url('/assets/src/css/fonts/druk/Druk-Bold.woff') format('woff'),
+        url('/assets/src/css/fonts/druk/Druk-Bold.ttf') format('truetype'),
+        url('/assets/src/css/fonts/druk/Druk-Bold.svg#Druk-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}

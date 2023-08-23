@@ -1,0 +1,35 @@
+.sitelogo{
+    @apply flex items-center justify-center py-3;
+}
+
+.menu-dia{
+    li{
+        strong, i{
+            @apply block;
+        }
+        p{
+            @apply mb-0;
+        }
+    }
+}
+.form{
+    &-group{
+        @apply mb-6;
+    }
+    &-field{
+        label{
+            @apply block;
+        }
+    }
+    #opciones-menu-dia{
+        @apply hidden;
+    }
+}
+
+.site-footer{
+    .copyright{
+        @apply m-0 text-xl text-center text-light;
+    }
+}
+
+

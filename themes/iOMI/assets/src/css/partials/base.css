@@ -1,0 +1,481 @@
+::selection {
+    @apply text-white bg-primary-1;
+}
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+
+# Body
+# Heading
+# Paragraph
+# Links
+# List
+# Other Elements
+## Component Captions
+## Component icon social
+## Component Infinite scroll
+## Component Posts and pages
+# Widgets
+# Alignments
+# Forms
+
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+    color: #404040;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+body {
+    @apply font-normal text-white font-text bg-primary;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: rem(16px);
+    line-height: 26px;
+    hyphens: none;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+/*--------------------------------------------------------------
+# Heading
+--------------------------------------------------------------*/
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+    @apply mb-4 font-bold font-heading;
+    hyphens: none;
+    letter-spacing: -0.02em;
+    word-break: keep-all;
+    word-wrap: normal;
+    clear: both;
+}
+h1,
+.h1 {
+    font-size: 4rem;
+    line-height: 2.4rem;
+    @screen sm {
+        font-size: 3rem;
+        line-height: 3.6rem;
+    }
+}
+h2,
+.h2 {
+    font-size: 2.25rem;
+    line-height: 2.9375rem;
+}
+h3,
+.h3 {
+    font-size: 1.5rem;
+    line-height: 1.8125rem;
+}
+h4,
+.h4 {
+    font-size: 1.125rem;
+    line-height: 1.625rem;
+}
+h5,
+.h5 {
+    font-size: 1rem;
+    line-height: 1.4375rem;
+}
+h6,
+.h6 {
+    font-size: 0.875rem;
+    line-height: 1.3125rem;
+}
+
+/*--------------------------------------------------------------
+# Paragraph
+--------------------------------------------------------------*/
+p {
+    @apply mb-4 font-text;
+    hyphens: none;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+
+/*--------------------------------------------------------------
+# Links
+--------------------------------------------------------------*/
+
+a {
+    color: royalblue;
+}
+
+a:visited {
+    color: purple;
+}
+
+a:hover,
+a:focus,
+a:active {
+    color: midnightblue;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+}
+
+/*--------------------------------------------------------------
+# List
+--------------------------------------------------------------*/
+ul,
+ol {
+    margin: 0 0 1.5em 3em;
+}
+
+ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+li > ul,
+li > ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+/*--------------------------------------------------------------
+# Other Elements
+--------------------------------------------------------------*/
+
+hr {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+dfn,
+cite,
+em,
+i {
+    font-style: italic;
+}
+
+blockquote {
+    @apply text-center text-primary bg-primary;
+    border-radius: 10px;
+    margin-bottom: 24px;
+    margin-top: 24px;
+    padding: 20px 40px;
+    p {
+        @apply mb-0 text-white;
+    }
+}
+
+address {
+    margin: 0 0 1.5em;
+}
+
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 15px;
+    font-size: 0.9375rem;
+}
+
+abbr,
+acronym {
+    border-bottom: 1px dotted #666;
+    cursor: help;
+}
+
+mark,
+ins {
+    background: #fff9c0;
+    text-decoration: none;
+}
+
+/* Make sure embeds and iframes fit their containers. */
+embed,
+iframe,
+object {
+    max-width: 100%;
+}
+
+figure {
+    margin: 1em 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+}
+
+
+/*--------------------------------------------------------------
+## Component Captions
+--------------------------------------------------------------*/
+.wp-caption {
+    margin-bottom: 1.5em;
+    max-width: 100%;
+}
+
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.wp-caption .wp-caption-text {
+    margin: 0.8075em 0;
+}
+
+.wp-caption-text {
+    text-align: center;
+}
+
+/*--------------------------------------------------------------
+## Component icon social
+--------------------------------------------------------------*/
+.icon-social {
+    .icons {
+        @apply flex mt-4 gap-x-4;
+        .icon-link {
+            svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+}
+
+/*--------------------------------------------------------------
+## Component Infinite scroll
+--------------------------------------------------------------*/
+/* Globally hidden elements when Infinite Scroll is supported and in use. */
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    /* Theme Footer (when set to scrolling) */
+    display: none;
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
+.infinity-end.neverending .site-footer {
+    display: block;
+}
+
+/*--------------------------------------------------------------
+## Component Posts and pages
+--------------------------------------------------------------*/
+.page-content,
+.entry-content,
+.entry-summary {
+    margin: 1.5em 0 0;
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widget {
+    margin: 0 0 1.5em;
+    /* Make sure select elements fit in widgets. */
+}
+
+.widget select {
+    max-width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Alignments
+--------------------------------------------------------------*/
+.alignleft {
+    display: inline;
+    float: left;
+    margin-right: 1.5em;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+    margin-left: 1.5em;
+}
+
+.aligncenter {
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*--------------------------------------------------------------
+# Forms
+--------------------------------------------------------------*/
+
+input[type="text"],
+select,
+textarea {
+    @apply font-normal ;
+    border-radius: 9px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 22px;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+}
+select {
+    @apply appearance-none;
+    /* Some browsers will not display the caret when using calc, so we put the fallback first */
+    background: url("../img/arrow-select.svg") #fff no-repeat 98.5% !important;
+    background: url("../img/arrow-select.svg") #fff no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
+}
+/*For IE*/
+select::-ms-expand {
+    @apply hidden;
+}
+
+iframe {
+    @apply w-full;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    border: 1px solid;
+    border-color: #ccc #ccc #bbb;
+    border-radius: 3px;
+    background: #e6e6e6;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    font-size: 0.75rem;
+    line-height: 1;
+    padding: 0.6em 1em 0.4em;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover {
+    border-color: #ccc #bbb #aaa;
+}
+
+button:active,
+button:focus,
+input[type="button"]:active,
+input[type="button"]:focus,
+input[type="reset"]:active,
+input[type="reset"]:focus,
+input[type="submit"]:active,
+input[type="submit"]:focus {
+    border-color: #aaa #bbb #bbb;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+input[type="password"],
+input[type="search"],
+input[type="number"],
+input[type="tel"],
+input[type="range"],
+input[type="date"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="color"],
+textarea {
+    color: #666;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 3px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus {
+    color: #111;
+}
+
+select {
+    @apply w-full py-4 appearance-none ;
+    border-radius: 10px;
+    border: 3px solid #ebf2ff;
+    box-sizing: border-box;
+    &:focus {
+        @apply outline-none;
+    }
+}
+
+textarea {
+    width: 100%;
+}
