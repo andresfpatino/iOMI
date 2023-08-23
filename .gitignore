@@ -1,0 +1,30 @@
+# https://git-scm.com/docs/gitignore
+# https://help.github.com/articles/ignoring-files
+# Example .gitignore files: https://github.com/github/gitignore
+
+
+themes/__MACOSX/
+
+themes/iOMI/.sass-cache/Rename branch default from main to MASTER git branch -m main master
+themes/iOMI/node_modules/
+themes/iOMI/bower_components/
+themes/iOMI/.vscode/
+themes/iOMI/.editorconfig
+themes/iOMI/__MACOSX/
+
+# Enabled when deployment site in server dev
+plugins/
+uploads/
+
+# OS generated files #
+######################
+**/.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Remove theme default
+/themes/twenty*/
