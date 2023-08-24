@@ -6,7 +6,7 @@ function reorganizar_agregar_columna_estado($columns) {
     unset($columns['date']);
 
     // Agregar las columnas personalizadas en el orden deseado
-    $columns['numero_documento'] = 'Número de Documento';
+    $columns['numero_documento'] = 'Cód. Doc. Identidad';
     $columns['menu_seleccionado'] = 'Menú Seleccionado';
     $columns['estado'] = 'Estado';
 

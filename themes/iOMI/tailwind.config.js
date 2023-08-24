@@ -10,11 +10,11 @@ module.exports = {
                 primary: {
                     DEFAULT: "#3F2460",
 					1 : "#673E9B",
-					2: "#240E44"
+					2: "#240E44",
+                    3: "#e9e6f1",
                 },
             },
             fontFamily: {
-                heading: "Druk",
                 text: "Dexa Pro",
             },
             container: {

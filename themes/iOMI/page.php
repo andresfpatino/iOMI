@@ -10,29 +10,15 @@
  * @package themeiOMI
  */
 
-acf_form_head();
 get_header(); ?>
 
-<div class="py-8 content__page">
-    <div class="container mx-auto">
-        <div class="flex flex-wrap px-4">
-            <div class="w-full"> <?php 
-            
-                while (have_posts()) : the_post();
-
-                   the_content();
-
-
-                endwhile; ?>
-
-
-
-
-
-
-            </div>
-        </div>
+<div class="content__page">
+    <div class="content__page-wrap"> <?php     
+        while (have_posts()) : the_post();
+            the_content();
+        endwhile; ?>
     </div>
 </div>
+
 <?php
 get_footer();
