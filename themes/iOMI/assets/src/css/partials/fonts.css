@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Dexa Pro';    
-    src: url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.eot');
-    src: url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.eot?#iefix') format('embedded-opentype'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.woff2') format('woff2'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.woff') format('woff'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.ttf') format('truetype'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnRegular.svg#DexaProCnRegular') format('svg');
+    src: url('/assets/src/css/fonts/dexaPro/DexaPro-Regular.eot');
+    src: url('/assets/src/css/fonts/dexaPro/DexaPro-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Regular.woff2') format('woff2'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Regular.woff') format('woff'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Regular.ttf') format('truetype'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Regular.svg#DexaPro-Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -14,13 +14,13 @@
 
 @font-face {
     font-family: 'Dexa Pro';
-    src: url('/assets/src/css/fonts/dexaPro/DexaProCnBold.eot');
-    src: url('/assets/src/css/fonts/dexaPro/DexaProCnBold.eot?#iefix') format('embedded-opentype'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.woff2') format('woff2'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.woff') format('woff'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.ttf') format('truetype'),
-        url('/assets/src/css/fonts/dexaPro/DexaProCnBold.svg#FONTSPRINGDEMO-DexaProCnBold') format('svg');
-    font-weight: bold;
+    src: url('/assets/src/css/fonts/dexaPro/DexaPro-Bold.eot');
+    src: url('/assets/src/css/fonts/dexaPro/DexaPro-Bold.eot?#iefix') format('embedded-opentype'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Bold.woff2') format('woff2'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Bold.woff') format('woff'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Bold.ttf') format('truetype'),
+        url('/assets/src/css/fonts/dexaPro/DexaPro-Bold.svg#FONTSPRINGDEMO-DexaPro-Bold') format('svg');
+    font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
