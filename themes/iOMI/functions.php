@@ -30,3 +30,6 @@ require_once 'inc/functions/count-pedidos.php';
 
 /** Custom columns **/
 require_once 'inc/functions/columns.php';
+
+/** Custom login **/
+require_once 'inc/functions/custom-login.php';
