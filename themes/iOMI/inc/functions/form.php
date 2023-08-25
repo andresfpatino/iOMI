@@ -38,7 +38,7 @@ function custom_post_form_submission() {
         // Cuerpo del mensaje con formato HTML y estilos
         $message = "<html><body>";
         $message .= "<style>";
-        $message .= "body { font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Ubuntu, \"Helvetica Neue\", sans-serif; background-color: #3f2560; margin: 0; padding: 0; }";
+        $message .= "body { font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Ubuntu, \"Helvetica Neue\", sans-serif; background-color: #3f2560; margin: 0; padding: 0 24px; }";
         $message .= ".email-container { max-width: 550px; margin: 0 auto; padding: 20px; border-radius: 10px; color: #3F2460; background-color: #e9e6f1; }";
         $message .= ".logo-container { text-align: center; padding-top: 60px; margin-bottom: 30px; }";
         $message .= ".logo { width: 230px; }";

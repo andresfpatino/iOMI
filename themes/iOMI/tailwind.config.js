@@ -14,6 +14,9 @@ module.exports = {
                     3: "#e9e6f1",
                 },
             },
+            backgroundImage: {
+                'pattern' : "url('/assets/src/img/pattern.webp')",
+            },
             fontFamily: {
                 text: "Dexa Pro",
             },

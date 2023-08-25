@@ -27,11 +27,15 @@ function actualizarHora() {
     var amPm = horas >= 12 ? 'pm' : 'am';
     horas = horas % 12 || 12;
     
+    // Formatear horas, minutos y segundos con cero inicial si son menores que 10
+    horas = horas < 10 ? '0' + horas : horas;
+    minutos = minutos < 10 ? '0' + minutos : minutos;
+    segundos = segundos < 10 ? '0' + segundos : segundos;
+    
     document.getElementById("hora-actual").textContent = horas + ":" + minutos + ":" + segundos + " " + amPm;
 }
 setInterval(actualizarHora, 1000);
 actualizarHora();
-
 
 // Show extra options in the form
 document.addEventListener("DOMContentLoaded", function () {
