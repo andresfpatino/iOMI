@@ -62,7 +62,7 @@ get_header(); ?>
                 </ul>
             </div>
             <div class="menu-card">
-                <h3>Comida rápida del día</h3>                        
+                <h3>Menú alternativo</h3>                        
                 <ul> <?php
                     $comida_rapida = get_field('comida_rapida', 'option');
                     if( $comida_rapida ): ?>
@@ -104,7 +104,7 @@ get_header(); ?>
                 </span>
                 <span class="form-field">
                     <label>
-                        <input type="radio" name="menu" required value="Comida rápida"> Comida rápida
+                        <input type="radio" name="menu" required value="Menú alternativo"> Menú alternativo
                     </label>
                 </span>
             </fieldset>

@@ -70,7 +70,7 @@ function custom_post_form_submission() {
             $message .= "<tr><td></td><td>" .ucfirst(strtolower($postre->post_title)) . "</td></tr>"; 
             $message .= "<tr><td></td><td>" . ucfirst(strtolower($bebida->post_title)) . "</td></tr>"; 
         } 
-        if($menu === 'Comida rápida'){
+        if($menu === 'Menú alternativo'){
             $message .= "<tr><td></td><td>" . $comida_rapida->post_title . "</td></tr>";            
         }
         $message .= "</table>";

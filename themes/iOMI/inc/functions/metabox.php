@@ -65,7 +65,7 @@ function mostrar_metabox_pedido($post) {
         }
     } else {       
         if( $comida_rapida ) {
-            echo  "<p><strong>Comida rápida: </strong>" . esc_attr(ucfirst(strtolower($comida_rapida->post_title))) . "</p>";
+            echo  "<p><strong>Menú alternativo: </strong>" . esc_attr(ucfirst(strtolower($comida_rapida->post_title))) . "</p>";
         }
     }
 }
