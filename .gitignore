@@ -5,12 +5,21 @@
 
 themes/__MACOSX/
 
-themes/iOMI/.sass-cache/Rename branch default from main to MASTER git branch -m main master
+# Corportate Theme
+themes/iOMI/.sass-cache/
 themes/iOMI/node_modules/
 themes/iOMI/bower_components/
 themes/iOMI/.vscode/
 themes/iOMI/.editorconfig
 themes/iOMI/__MACOSX/
+
+# Location Theme
+themes/iOMI-location/.sass-cache/
+themes/iOMI-location/node_modules/
+themes/iOMI-location/bower_components/
+themes/iOMI-location/.vscode/
+themes/iOMI-location/.editorconfig
+themes/iOMI-location/__MACOSX/
 
 # Enabled when deployment site in server dev
 plugins/

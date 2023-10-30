@@ -363,7 +363,6 @@ table {
 --------------------------------------------------------------*/
 
 input[type="text"],
-select,
 textarea {
     @apply font-normal focus:outline-none;
     border-radius: 9px;
@@ -373,16 +372,6 @@ textarea {
     line-height: 22px;
     padding-left: 10px !important;
     padding-right: 10px !important;
-}
-select {
-    @apply appearance-none;
-    /* Some browsers will not display the caret when using calc, so we put the fallback first */
-    background: url("../img/arrow-select.svg") #fff no-repeat 98.5% !important;
-    background: url("../img/arrow-select.svg") #fff no-repeat calc(100% - 10px) !important; /* Better placement regardless of input width */
-}
-/*For IE*/
-select::-ms-expand {
-    @apply hidden;
 }
 
 iframe {
@@ -461,16 +450,6 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
     color: #111;
-}
-
-select {
-    @apply w-full py-4 appearance-none ;
-    border-radius: 10px;
-    border: 3px solid #ebf2ff;
-    box-sizing: border-box;
-    &:focus {
-        @apply outline-none;
-    }
 }
 
 textarea {

@@ -1,9 +1,6 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 
-@import "./partials/fonts.css";
-@import "./partials/base.css";
 @import "./partials/theme.css";
 
 @import "tailwindcss/utilities";
-@import "flatpickr/dist/flatpickr.css";

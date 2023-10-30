@@ -1,6 +1,9 @@
 import $ from "jquery";
 window.$ = window.jQuery = $;
 
+import flatpickr from "flatpickr";
+import { Spanish } from "flatpickr/dist/l10n/es.js"
+
 // Menu sticky
 const header = document.querySelector(".site-header");
 const content = document.querySelector(".site-content");
@@ -17,25 +20,20 @@ if (header) {
     }
 }
 
-// Get hour in shortcode
-function actualizarHora() {
-    var fechaHora = new Date();
-    var horas = fechaHora.getHours();
-    var minutos = fechaHora.getMinutes();
-    var segundos = fechaHora.getSeconds();
+// Update date
+var inputFecha = document.getElementById("fecha_seleccionada");
+var elementoFecha = document.querySelector(".fecha");
+
+if(elementoFecha){
+    function formatearFecha(fecha) {
+        var fechaUTC = new Date(fecha.getUTCFullYear(), fecha.getUTCMonth(), fecha.getUTCDate(), fecha.getUTCHours(), fecha.getUTCMinutes(), fecha.getUTCSeconds()); 
+        var opcionesDeFecha = { weekday: 'long', day: 'numeric', month: 'long' };
+        opcionesDeFecha.timeZone = 'America/Bogota';
+        return fechaUTC.toLocaleDateString('es-CO', opcionesDeFecha);
+    }
     
-    var amPm = horas >= 12 ? 'pm' : 'am';
-    horas = horas % 12 || 12;
-    
-    // Formatear horas, minutos y segundos con cero inicial si son menores que 10
-    horas = horas < 10 ? '0' + horas : horas;
-    minutos = minutos < 10 ? '0' + minutos : minutos;
-    segundos = segundos < 10 ? '0' + segundos : segundos;
-    
-    document.getElementById("hora-actual").textContent = horas + ":" + minutos + ":" + segundos + " " + amPm;
+    elementoFecha.textContent = formatearFecha(new Date(inputFecha.value));
 }
-setInterval(actualizarHora, 1000);
-actualizarHora();
 
 // Show extra options in the form
 document.addEventListener("DOMContentLoaded", function () {
@@ -65,3 +63,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+// Calendar
+const fechaSeleccionadaInput = document.querySelector("#fecha_seleccionada");
+
+if (fechaSeleccionadaInput) {
+    flatpickr(fechaSeleccionadaInput, {
+        "locale": Spanish,
+        dateFormat: "Y-m-d",
+        defaultDate: "today",
+        minDate: "today",
+        maxDate: new Date().fp_incr(30),
+        inline: true,
+    });
+}
