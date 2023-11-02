@@ -144,9 +144,9 @@
 }
 
 .site-footer{
-    @apply py-4 bg-primary-2;
+    @apply absolute bottom-0 w-full p-4 bg-primary-2;
     .copyright{
-        @apply m-0 text-base text-center lg:text-xl text-light;
+        @apply m-0 text-sm text-center md:text-base lg:text-xl text-light;
     }
 }
 
@@ -168,4 +168,22 @@
 
 .page{
     @apply bg-fixed bg-pattern bg-[length:400px];
+}
+
+.sites-grid{
+    @apply flex flex-wrap justify-center gap-3 mt-9; 
+    .site{
+        @apply w-[calc(50%_-_12px)] md:w-[calc(33.333%_-_12px)];
+        a{
+            @apply block font-bold transition-all duration-300 ease-in-out hover:text-primary-2;
+            img{
+                @apply mb-2 transition-all duration-300 ease-in-out scale-95 w-[150px] mx-auto;
+            }
+            &:hover{
+                img{
+                    @apply scale-100;
+                }
+            }
+        }
+    }
 }
