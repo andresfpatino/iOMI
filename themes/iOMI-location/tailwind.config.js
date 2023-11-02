@@ -13,6 +13,7 @@ module.exports = {
 					2: "#240E44",
                     3: "#e9e6f1",
                 },
+                warning: "#C74A4A",
             },
             backgroundImage: {
                 'pattern' : "url('/assets/src/img/pattern.webp')",

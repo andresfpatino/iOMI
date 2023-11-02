@@ -37,12 +37,7 @@
                         echo "<h3 class='mb-0'>" . get_bloginfo('name') . "</h3>";
                     } ?>
                 </a>
-            </div>    
-            <?php if (has_nav_menu('menu')) { ?>
-                <div class="site__nav">
-                    <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
-                </div>
-            <?php  } ?>        
+            </div>            
         </header>
         
         <!-- Content Page -->
