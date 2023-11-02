@@ -16,15 +16,14 @@
 get_header(); ?>
 
 <div class="index__container">
-    <div class="container">
-        <div class="grid grid-cols-1 gap-6 px-4 md:grid-cols-2 lg:grid-cols-3">
-            <?php while (have_posts()) : the_post(); ?>
-
-            <?php endwhile; ?>
-        </div>
+    <div class="container"> 
+        <?php
+        while (have_posts()) :
+             the_post();
+        endwhile;
+        ?>
     </div>
 </div>
-
 
 <?php
 get_footer();

@@ -15,45 +15,38 @@ get_header(); ?>
 <div class="content__page">
     <div class="content__page-wrap"> <?php     
         while (have_posts()) : the_post();
-            the_content();
             
-
+        	the_content();
+            
             $current_site_id = get_current_blog_id();
-
-            // Obtiene la lista de sitios secundarios
             $sites = get_sites();
-            
+			
             if ($sites) {
-              echo '<ul>';
-              foreach ($sites as $site) {
-                $site_id = $site->blog_id;
-            
-                // Omitir el sitio actual
-                if ($current_site_id == $site_id) {
-                  continue;
-                }
-            
-                // Cambia al contexto del sitio secundario
-                switch_to_blog($site_id);
-            
-                $site_details = get_blog_details($site_id);
-                $site_name = $site_details->blogname;
-                $site_logo = get_field('logo', 'option'); // Reemplaza 'logo' con el nombre correcto del campo ACF
-            
-                restore_current_blog(); // Vuelve al contexto del sitio principal
-            
-                if (!empty($site_logo)) {
-                  echo '<li><a href="' . $site_details->siteurl . '"><img src="' . $site_logo['url'] . '" alt="' . $site_name . '">' . $site_name . '</a></li>';
-                } else {
-                  echo '<li><a href="' . $site_details->siteurl . '">' . $site_name . '</a></li>';
-                }
-              }
-              echo '</ul>';
+				echo '<div class="sites-grid">';
+					foreach ($sites as $site) {
+						$site_id = $site->blog_id;
+					
+						if ($current_site_id == $site_id) {
+							continue;
+						}
+					
+						switch_to_blog($site_id);				
+							$site_details = get_blog_details($site_id);
+							$site_name = $site_details->blogname;
+							$site_logo = get_field('logo', 'option');				
+						restore_current_blog(); 
+				
+						if (!empty($site_logo)) {
+							echo '<div class="site"><a href="' . $site_details->siteurl . '"><img src="' . $site_logo['url'] . '" alt="' . $site_name . '">' . $site_name . '</a></div>';
+						} else {
+							echo '<div class="site"><a href="' . $site_details->siteurl . '">' . $site_name . '</a></div>';
+						}
+					}
+				echo '</div>';
             } else {
               echo 'No hay sitios secundarios disponibles.';
             }
-
-
+			
         endwhile; ?>
     </div>
 </div>

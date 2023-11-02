@@ -6,12 +6,12 @@
 themes/__MACOSX/
 
 # Corportate Theme
-themes/iOMI/.sass-cache/
-themes/iOMI/node_modules/
-themes/iOMI/bower_components/
-themes/iOMI/.vscode/
-themes/iOMI/.editorconfig
-themes/iOMI/__MACOSX/
+themes/iOMI-corporate/.sass-cache/
+themes/iOMI-corporate/node_modules/
+themes/iOMI-corporate/bower_components/
+themes/iOMI-corporate/.vscode/
+themes/iOMI-corporate/.editorconfig
+themes/iOMI-corporate/__MACOSX/
 
 # Location Theme
 themes/iOMI-location/.sass-cache/
