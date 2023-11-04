@@ -138,3 +138,9 @@ function mostrar_campos_acf($campo_name, $legend_text) {
         echo '</fieldset>';
     endif;
 }
+
+function mostrar_nombre_sitio_actual() {
+    $nombre_sitio = get_blog_details( get_current_blog_id() )->blogname;
+    return "<h2>{$nombre_sitio}</h2>";
+}
+add_shortcode('site_name', 'mostrar_nombre_sitio_actual');

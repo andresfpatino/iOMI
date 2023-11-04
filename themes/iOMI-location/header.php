@@ -27,36 +27,37 @@
     <div id="page" class="site">
 
         <!-- Header -->
-        <header class="site-header">                   
-            <div class="sitelogo"> <?php
-                $GETlogo = get_field('logo', 'option');    ?>
-
-                <?php switch_to_blog(1); 
-                
-                    $GETmainlogo = get_field('logo', 'option'); ?>
+        <header class="site-header">   
+            <div class="site-header--wrap">
+                <div class="sitelogo"> <?php
+                    $GETlogo = get_field('logo', 'option');    ?>
+    
+                    <?php switch_to_blog(1);                     
+                        $GETmainlogo = get_field('logo', 'option'); ?>
+                        <a href="<?php echo esc_url(get_bloginfo('url')); ?>"> <?php 
+                            if ($GETmainlogo) {
+                                iOMI_get_Image($GETmainlogo);
+                            } else {
+                                echo "<h3 class='mb-0'>" . get_bloginfo('name') . "</h3>";
+                            } ?>
+                        </a>
+                    <?php restore_current_blog(1);  ?>
+                    
                     <a href="<?php echo esc_url(get_bloginfo('url')); ?>"> <?php 
-                        if ($GETmainlogo) {
-                            iOMI_get_Image($GETmainlogo);
+                        if ($GETlogo) {
+                            iOMI_get_Image($GETlogo);
                         } else {
                             echo "<h3 class='mb-0'>" . get_bloginfo('name') . "</h3>";
                         } ?>
                     </a>
-                <?php restore_current_blog(1);  ?>
-                
-                <a href="<?php echo esc_url(get_bloginfo('url')); ?>"> <?php 
-                    if ($GETlogo) {
-                        iOMI_get_Image($GETlogo);
-                    } else {
-                        echo "<h3 class='mb-0'>" . get_bloginfo('name') . "</h3>";
-                    } ?>
-                </a>
-
-            </div>    
-            <?php if (has_nav_menu('menu')) { ?>
-                <div class="site__nav">
-                    <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
-                </div>
-            <?php  } ?>        
+    
+                </div>    
+                <?php if (has_nav_menu('menu')) { ?>
+                    <div class="site__nav">
+                        <?php wp_nav_menu(array('theme_location' => 'menu')); ?>
+                    </div>
+                <?php  } ?>
+            </div>                
         </header>
         
         <!-- Content Page -->

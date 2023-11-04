@@ -12,12 +12,54 @@
 
 .site-header{
     @apply py-8;
+    &--wrap{
+        @apply container relative flex items-center justify-center;
+    }
     .sitelogo{
-        @apply flex items-center justify-center;
+        @apply flex items-center justify-center gap-6;
         img{
-            @apply w-40 md:w-64;
+            @apply w-40;           
+        }
+        a{
+            &:nth-child(2){
+                img{
+                    @apply w-28;
+                }
+            }
         }
     }
+    .menu{
+        @apply absolute right-0 block m-0 list-none border-none;
+        > .menu-item{
+            @apply px-6 py-1 border rounded-md border-primary-1;
+        }
+        &-item{
+            a{
+                @apply block text-white hover:text-primary-3;
+            }
+            .sub-menu{
+                @apply right-0 z-50 hidden transition-all duration-300 ease-in-out opacity-0 w-max;
+                .menu-item{
+                    @apply px-6 py-2 leading-none text-right bg-white;
+                    &:first-child{
+                        @apply mt-3 rounded-tl-md rounded-tr-md;
+                    }
+                    &:last-child{
+                        @apply pb-3 rounded-br-md rounded-bl-md;
+                    }
+                    a{
+                        @apply block text-sm leading-none uppercase hover:text-primary-2 text-primary-1 hover:scale-95;
+                    }
+                }
+            }
+            &:hover{
+                .sub-menu{
+                    @apply absolute block m-0 list-none opacity-100 top-full;
+                }
+            }
+        }
+    }
+
     &.IsSticky{
         @apply fixed mx-auto top-0 z-[100] bg-primary w-full py-2 shadow-2xl shadow-primary-2/75;            
         animation: stickAnim .3s ease-in-out;
@@ -33,7 +75,7 @@
 .site-content{
     @apply px-6 pt-8 pb-16 md:px-0;    
     .content__page{
-        @apply container;
+        @apply container mb-16;
         &-wrap{
             @apply w-full lg:w-[75%] mx-auto bg-primary-3 text-primary text-center px-9 py-14 rounded-xl;
         }
@@ -62,58 +104,57 @@
         }
     }
     input[type="submit"]{
-        @apply w-full px-6 py-6 text-lg font-bold leading-none uppercase transition-all duration-500 ease-in-out border-none rounded-md cursor-pointer md:px-10 lg:py-4 lg:w-auto hover:bg-primary-1 bg-primary text-primary-3;
+        @apply md:!w-[calc(100%_-_80px)] px-6 py-6 text-lg font-bold leading-none uppercase transition-all duration-500 ease-in-out border-none rounded-md cursor-pointer md:px-10 lg:py-4 lg:w-auto hover:bg-primary-1 bg-primary text-primary-3;
     }
 }
 
 .fecha{
-    @apply mt-6 text-2xl font-bold uppercase -tracking-wider;
+    @apply mt-16 text-2xl font-bold uppercase -tracking-wider;
 }
 
 .error-message{
     @apply my-6 font-bold text-warning;
 }
 
-.menu{
-    @apply grid gap-6 border-b border-dashed md:grid-cols-2 border-primary-1;
-    &-card{
-        @apply pb-6 text-center md:px-6;
-        &:first-child{
-            @apply border-dashed md:border-r border-primary-1;
-        }
-        h2, h3, h4, h5, h5{
-            @apply text-xl uppercase;
-        }
-        ul{
-            @apply m-0 list-none;
-            li{
-                @apply mb-4;
-                &:last-child{
-                    @apply mb-0;
-                }
-                strong{
-                    @apply block text-lg;
-                }
-                p{
-                    @apply mb-0;
-                }
-                i{
-                    @apply block mt-2 text-base not-italic leading-4 text-primary-1;
+.form{
+    @apply pt-10 text-left;
+    .menu{
+        @apply grid gap-6 border-b border-dashed md:grid-cols-2 border-primary-1 mb-9;
+        &-card{
+            @apply pb-6 text-center md:px-6;
+            &:first-child{
+                @apply border-dashed md:border-r border-primary-1;
+            }
+            h2, h3, h4, h5, h5{
+                @apply text-xl uppercase;
+            }
+            ul{
+                @apply m-0 list-none;
+                li{
+                    @apply mb-4;
+                    &:last-child{
+                        @apply mb-0;
+                    }
+                    strong{
+                        @apply block text-lg;
+                    }
+                    p{
+                        @apply mb-0;
+                    }
+                    i{
+                        @apply block mt-2 text-base not-italic leading-4 text-primary-1;
+                    }
                 }
             }
         }
     }
-}
-
-.form{
-    @apply pt-8 text-left;
     &-group{
-        @apply flex flex-wrap gap-6 mb-6;
+        @apply flex flex-wrap gap-6 py-3;
         &:last-child{
             @apply mb-0;
         }
         legend{
-            @apply w-full mb-3 font-bold;
+            @apply w-full font-bold;
         }
         &.data{
             @apply flex-col gap-0;
@@ -139,12 +180,13 @@
         @apply hidden transition duration-200 ease-in-out opacity-0;
     }
     button{
-        @apply w-full px-6 py-6 text-lg font-bold leading-none uppercase transition-all duration-500 ease-in-out border-none rounded-md md:px-10 lg:py-4 lg:w-auto mt-9 hover:bg-primary-1 bg-primary text-primary-3;
+        @apply w-full px-6 py-6 text-lg font-bold leading-none uppercase transition-all duration-500 ease-in-out border-none rounded-md md:px-10 lg:py-4 mt-9 hover:bg-primary-1 bg-primary text-primary-3;
     }
 }
 
 .site-footer{
-    @apply absolute bottom-0 w-full p-4 bg-primary-2;
+    @apply bottom-0 w-full p-4 bg-primary-2;
+    position: fixed;
     .copyright{
         @apply m-0 text-sm text-center md:text-base lg:text-xl text-light;
     }
@@ -185,5 +227,11 @@
                 }
             }
         }
+    }
+}
+
+.um-um_account_id{
+    .um-account-meta{
+        @apply hidden;
     }
 }

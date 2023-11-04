@@ -54,7 +54,7 @@
         </span>
         <span class="form-field">
             <label>
-                <input type="radio" name="menu" required value="Menú alternativo"><?php _e('Menú alternativo', 'iOMI'); ?>  
+                <input type="radio" name="menu" required value="Menú alternativo"> <?php _e('Menú alternativo', 'iOMI'); ?>  
             </label>
         </span>
     </fieldset>
