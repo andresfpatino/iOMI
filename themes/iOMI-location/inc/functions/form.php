@@ -12,14 +12,14 @@ function custom_post_form_submission() {
         $apellido = sanitize_text_field($_POST['apellido']);
         $post_title = $nombre . ' ' . $apellido;
         $menu = sanitize_text_field($_POST['menu']);
-        $arroz = get_field('arroz', 'option');
-        $farinaceo = get_field('farinaceo', 'option');
-        $principioGrano = get_field('principio_grano', 'option');
-        $principioVerdura = get_field('principio_verdura', 'option');
-        $ensalada = get_field('ensalada', 'option');
-        $postre = get_field('postre', 'option');
-        $bebida = get_field('bebida', 'option');
-        $comida_rapida = get_field('comida_rapida', 'option');
+        $arroz = sanitize_text_field($_POST['arroz']);
+        $farinaceo = sanitize_text_field($_POST['farinaceo']);
+        $principioGrano = sanitize_text_field($_POST['principio_grano']);
+        $principioVerdura =  sanitize_text_field($_POST['principio_verdura']);
+        $ensalada = sanitize_text_field($_POST['ensalada']);
+        $postre = sanitize_text_field($_POST['postre']);
+        $bebida = sanitize_text_field($_POST['bebida']);
+        $comida_rapida = sanitize_text_field($_POST['comida_rapida']);
 
         $post_data = array(
             'post_title'   => $post_title,
@@ -32,8 +32,16 @@ function custom_post_form_submission() {
 
         update_post_meta($post_id, 'documento', sanitize_text_field($_POST['documento']));
         update_post_meta($post_id, 'menu', sanitize_text_field($_POST['menu']));
-        update_post_meta($post_id, 'sopa', sanitize_text_field($_POST['sopa'] ?? ''));
-        update_post_meta($post_id, 'proteina', sanitize_text_field($_POST['proteina'] ?? ''));
+        update_post_meta($post_id, 'sopa_o_crema', sanitize_text_field($_POST['sopa_o_crema'] ?? ''));
+        update_post_meta($post_id, 'proteinas', sanitize_text_field($_POST['proteinas'] ?? ''));
+        update_post_meta($post_id, 'arroz', sanitize_text_field($_POST['arroz'] ?? ''));
+        update_post_meta($post_id, 'farinaceo', sanitize_text_field($_POST['farinaceo'] ?? ''));
+        update_post_meta($post_id, 'principio_grano', sanitize_text_field($_POST['principio_grano'] ?? ''));
+        update_post_meta($post_id, 'principio_verdura', sanitize_text_field($_POST['principio_verdura'] ?? ''));
+        update_post_meta($post_id, 'ensalada', sanitize_text_field($_POST['ensalada'] ?? ''));
+        update_post_meta($post_id, 'postre', sanitize_text_field($_POST['postre'] ?? ''));
+        update_post_meta($post_id, 'bebida', sanitize_text_field($_POST['bebida'] ?? ''));
+        update_post_meta($post_id, 'comida_rapida', sanitize_text_field($_POST['comida_rapida'] ?? ''));
                
         // Cuerpo del mensaje con formato HTML y estilos
         $message = "<html><body>";
@@ -60,18 +68,18 @@ function custom_post_form_submission() {
         $message .= "<tr><td></td></tr>";
         $message .= "<tr><td>Menú seleccionado:</td><td><strong>" . sanitize_text_field($_POST['menu']) . "</strong></td></tr>";
         if ($menu === 'Menú del día') {
-            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['sopa'] ?? ''))) . "</td></tr>";
-            $message .= "<tr><td></td><td>" . ucfirst(strtolower($arroz->post_title)) . "</td></tr>";
-            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['proteina'] ?? ''))) . "</td></tr>";
-            $message .= "<tr><td></td><td>" . ucfirst(strtolower($farinaceo->post_title)) . "</td></tr>"; 
-            $message .= "<tr><td></td><td>" . ucfirst(strtolower($principioGrano->post_title)) . "</td></tr>"; 
-            $message .= "<tr><td></td><td>" . ucfirst(strtolower($principioVerdura->post_title)) . "</td></tr>"; 
-            $message .= "<tr><td></td><td>" . ucfirst(strtolower( $ensalada->post_title)) . "</td></tr>";
-            $message .= "<tr><td></td><td>" .ucfirst(strtolower($postre->post_title)) . "</td></tr>"; 
-            $message .= "<tr><td></td><td>" . ucfirst(strtolower($bebida->post_title)) . "</td></tr>"; 
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['sopa_o_crema'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['arroz'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['proteinas'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['farinaceo'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['principio_grano'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['principio_verdura'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['ensalada'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['postre'] ?? ''))) . "</td></tr>";
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['bebida'] ?? ''))) . "</td></tr>";
         } 
         if($menu === 'Menú alternativo'){
-            $message .= "<tr><td></td><td>" . $comida_rapida->post_title . "</td></tr>";            
+            $message .= "<tr><td></td><td>" . sanitize_text_field(ucfirst(strtolower($_POST['comida_rapida'] ?? ''))) . "</td></tr>"; 
         }
         $message .= "</table>";
         $message .= "<p style='text-align: center;'><a href='$pedidoURL' target='_blank' class='btn'>Gestionar pedido</a></p>";

@@ -64,5 +64,45 @@
         mostrar_campos_acf('proteinas', '¿Qué proteína quieres?'); ?>
     </fieldset>
 
+    <?php $arroz = get_field('arroz'); 
+        if($arroz) : ?>
+        <input type="hidden" name="arroz" value="<?php echo esc_html(ucfirst(strtolower($arroz->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $farinaceo = get_field('farinaceo'); 
+        if($farinaceo) : ?>
+        <input type="hidden" name="farinaceo" value="<?php echo esc_html(ucfirst(strtolower($farinaceo->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $principio_grano = get_field('principio_grano'); 
+        if($principio_grano) : ?>
+        <input type="hidden" name="principio_grano" value="<?php echo esc_html(ucfirst(strtolower($principio_grano->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $principio_verdura = get_field('principio_verdura'); 
+        if($principio_verdura) : ?>
+        <input type="hidden" name="principio_verdura" value="<?php echo esc_html(ucfirst(strtolower($principio_verdura->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $ensalada = get_field('ensalada'); 
+        if($ensalada) : ?>
+        <input type="hidden" name="ensalada" value="<?php echo esc_html(ucfirst(strtolower($ensalada->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $postre = get_field('postre'); 
+        if($postre) : ?>
+        <input type="hidden" name="postre" value="<?php echo esc_html(ucfirst(strtolower($postre->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $bebida = get_field('bebida'); 
+        if($bebida) : ?>
+        <input type="hidden" name="bebida" value="<?php echo esc_html(ucfirst(strtolower($bebida->post_title))); ?>">
+    <?php endif; ?>
+
+    <?php $comida_rapida = get_field('comida_rapida'); 
+        if($comida_rapida) : ?>
+        <input type="hidden" name="comida_rapida" value="<?php echo esc_html(ucfirst(strtolower($comida_rapida->post_title))); ?>">
+    <?php endif; ?>
+
     <button type="submit"><?php _e('Solicitar pedido', 'iOMI'); ?>   </button>
 </form>
