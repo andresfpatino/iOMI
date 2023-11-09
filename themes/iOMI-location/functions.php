@@ -106,7 +106,7 @@ add_filter('wp_insert_post_data', 'auto_generate_post_title_from_acf', 10, 2);
 function showUMExtraFields() {
     $id = um_user('ID');
     $output = '';
-    $names = array('phone_number', 'documento_identidad');
+    $names = array('documento_identidad');
 
     $fields = array(); 
     foreach( $names as $name )
@@ -122,7 +122,7 @@ add_action('um_after_account_general', 'showUMExtraFields', 100);
 
 function getUMFormData(){
     $id = um_user('ID');
-    $names = array('phone_number', 'documento_identidad');
+    $names = array('documento_identidad');
 
     foreach( $names as $name )
         update_user_meta( $id, $name, $_POST[$name] );
