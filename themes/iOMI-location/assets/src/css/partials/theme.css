@@ -235,3 +235,16 @@
         @apply hidden;
     }
 }
+
+.um input[type=submit].um-button{
+    @apply !bg-primary hover:!bg-primary-1 !uppercase !font-bold;
+}
+
+.um .um-button.um-alt{
+    @apply !bg-primary-4 hover:!bg-light transition-all ease-in-out duration-500 !shadow-none !uppercase !font-bold;
+}
+
+.um-profile-photo,
+.um-profile-edit {
+    display: none;
+}

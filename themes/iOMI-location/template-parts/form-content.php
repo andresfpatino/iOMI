@@ -33,15 +33,15 @@
         <legend><?php _e('Datos personales', 'iOMI'); ?></legend>
         <span class="form-field">
             <label for="nombre"> <?php _e('Nombre:', 'iOMI'); ?> </label>
-            <input type="text" name="nombre" value="<?php echo do_shortcode('[um_user meta_key="first_name" ]'); ?>" required>
+            <input type="text" name="nombre" value="<?php echo do_shortcode('[um_user meta_key="first_name" ]'); ?>" required readonly>
         </span>
         <span class="form-field">
             <label for="apellido"><?php _e('Apellido:', 'iOMI'); ?> </label>
-            <input type="text" name="apellido" value="<?php echo do_shortcode('[um_user meta_key="last_name" ]'); ?>" required>
+            <input type="text" name="apellido" value="<?php echo do_shortcode('[um_user meta_key="last_name" ]'); ?>" required readonly>
         </span>
         <span class="form-field">
             <label for="documento"><?php _e('Cód. Doc. Identidad:', 'iOMI'); ?> </label>
-            <input type="text" name="documento" value="<?php echo do_shortcode('[um_user meta_key="documento_identidad" ]'); ?>" required>
+            <input type="text" name="documento" value="<?php echo do_shortcode('[um_user meta_key="documento_identidad" ]'); ?>" required readonly>
         </span>
     </fieldset>
 

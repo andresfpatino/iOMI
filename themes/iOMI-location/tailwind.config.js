@@ -12,6 +12,7 @@ module.exports = {
 					1 : "#673E9B",
 					2: "#240E44",
                     3: "#e9e6f1",
+                    4: "#d9d9d9",
                 },
                 warning: "#C74A4A",
             },
