@@ -248,3 +248,42 @@
 .um-profile-edit {
     display: none;
 }
+
+.um-account-side {
+    display: none;
+}
+
+.um-form{
+    @apply mt-9;
+    .um-field-label{
+        display: none;
+    }
+}
+
+.um-field:first-child{
+    @apply pt-0;
+}
+
+.um-field-documento_identidad{
+    @apply mt-[15px];
+}
+
+.um-row-heading {
+    font-weight: 700;
+}
+
+.um-account-main {
+    margin: 0 auto;
+    padding: 0px !important;
+    float: none !important;
+    .um-field-documento_identidad{
+        margin-top: 0px !important;
+    }
+    .um-left{
+        float: none !important;
+    }
+}
+
+.um-account-heading{
+    display: none !important;
+}
