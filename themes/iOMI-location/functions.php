@@ -78,12 +78,12 @@ add_shortcode( 'um_user', 'um_user_shortcode' );
 add_filter('wp_nav_menu_items', 'do_shortcode');
 
 
-// generate post name del menu
-function auto_generate_post_title_from_acf($data, $postarr) {
-    // Comprueba si estás editando un nuevo post o actualizando uno existente.
-    if ($postarr['post_status'] == 'auto-draft' || isset($postarr['acf'])) {
-        // Obtiene el valor del campo personalizado ACF 'fecha' para el nuevo título.
-        $fecha = get_field('fecha', $postarr['ID']);
+// Auto generate post name del menu
+function auto_generate_post_title_from_acf($post_ID) {
+    // Comprueba si estás actualizando un post con estado 'publicado'.
+    if (get_post_status($post_ID) === 'publish') {
+        // Obtiene el valor del campo personalizado ACF 'fecha'.
+        $fecha = get_field('fecha', $post_ID);
 
         // Si se encontró un valor en el campo 'fecha', lo convierte al formato deseado en español.
         if (!empty($fecha)) {
@@ -93,13 +93,16 @@ function auto_generate_post_title_from_acf($data, $postarr) {
             // Formatea la fecha con el nombre del mes en español
             $fecha_formateada = strftime('%A, %e de %B del %Y', strtotime($fecha));
             
-            $data['post_title'] = $fecha_formateada;
+            // Actualiza el título del post con el valor generado.
+            $post_data = array(
+                'ID'         => $post_ID,
+                'post_title' => $fecha_formateada,
+            );
+            wp_update_post($post_data);
         }
     }
-    return $data;
 }
-
-add_filter('wp_insert_post_data', 'auto_generate_post_title_from_acf', 10, 2);
+add_action('acf/save_post', 'auto_generate_post_title_from_acf', 20);
 
 
 /* Add fields to account page */
