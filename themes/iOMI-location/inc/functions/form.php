@@ -49,7 +49,7 @@ function custom_post_form_submission() {
         $message .= "body { font-family: system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Roboto, Ubuntu, \"Helvetica Neue\", sans-serif; background-color: #3f2560; margin: 0; padding: 0 24px; }";
         $message .= ".email-container { max-width: 550px; margin: 0 auto; padding: 20px; border-radius: 10px; color: #3F2460; background-color: #e9e6f1; }";
         $message .= ".logo-container { text-align: center; padding-top: 60px; margin-bottom: 30px; }";
-        $message .= ".logo { width: 230px; }";
+        $message .= ".logo { width: 230px; height: 140px; object-fit: contain;}";
         $message .= "h3 { color: #3f2560; text-align: center; margin-top: 20px; }";
         $message .= "table { margin-top: 60px; border-collapse: collapse; width: 100%; }";
         $message .= "table td { padding: 8px; }";
