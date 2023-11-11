@@ -14,7 +14,7 @@
 <!-- Footer -->
 <footer class="site-footer">
     <div class="container">
-        <p class="copyright">© <?php echo date('Y') . __(' iOMI una marca Aldimark. Todos los derechos reservados', 'frontporchsolutions'); ?> </p> 
+        <p class="copyright">© <?php echo date('Y') . __(' iOMI una marca Aldimark. Todos los derechos reservados', 'iOMI'); ?> </p> 
      
     </div>
 </footer>
