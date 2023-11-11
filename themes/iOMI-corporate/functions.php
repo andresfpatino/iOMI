@@ -7,6 +7,16 @@
  */
 
 
+// Setup theme
+if (!function_exists('iOMI_corporate')) :
+    function iOMI_corporate(){
+
+        // Let WordPress manage the document title.
+        add_theme_support('title-tag');
+    }
+endif;
+add_action('after_setup_theme', 'iOMI_corporate');
+
 // Disable Gutemeberg
 add_filter('use_block_editor_for_post', '__return_false');
 
