@@ -121,8 +121,6 @@ function showUMExtraFields() {
 }
 add_action('um_after_account_general', 'showUMExtraFields', 100);
 
-
-
 function getUMFormData(){
     $id = um_user('ID');
     $names = array('documento_identidad');
@@ -131,3 +129,17 @@ function getUMFormData(){
         update_user_meta( $id, $name, $_POST[$name] );
 }
 add_action('um_account_pre_update_profile', 'getUMFormData', 100);
+
+// Ocultar barra de administracion si es un estudiante.
+function ocultar_barra_admin_si_estudiante() {
+    // Verificar si el usuario está logueado
+    if (is_user_logged_in()) {
+        // Verificar si el usuario tiene el rol um_estudiante
+        $user = wp_get_current_user();
+        if (in_array('um_estudiante', (array)$user->roles)) {
+            // Ocultar la barra de administración solo para um_estudiante
+            add_filter('show_admin_bar', '__return_false');
+        }
+    }
+}
+add_action('wp', 'ocultar_barra_admin_si_estudiante');

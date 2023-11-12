@@ -65,3 +65,5 @@ function custom_login_logo_url($url) {
     return get_site_url();
 }
 add_filter('login_headerurl', 'custom_login_logo_url');
+
+add_filter('show_admin_bar', '__return_false');
