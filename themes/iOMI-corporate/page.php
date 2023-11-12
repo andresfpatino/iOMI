@@ -37,9 +37,9 @@ get_header(); ?>
 						restore_current_blog(); 
 				
 						if (!empty($site_logo)) {
-							echo '<div class="site"><a href="' . $site_details->siteurl . '"><img src="' . $site_logo['url'] . '" alt="' . $site_name . '">' . $site_name . '</a></div>';
+							echo '<div class="site"><a href="' . $site_details->siteurl . '" target="_blank"><img src="' . $site_logo['url'] . '" alt="' . $site_name . '">' . $site_name . '</a></div>';
 						} else {
-							echo '<div class="site"><a href="' . $site_details->siteurl . '">' . $site_name . '</a></div>';
+							echo '<div class="site"><a href="' . $site_details->siteurl . '" target="_blank">' . $site_name . '</a></div>';
 						}
 					}
 				echo '</div>';
