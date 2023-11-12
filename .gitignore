@@ -22,8 +22,8 @@ themes/iOMI-location/.editorconfig
 themes/iOMI-location/__MACOSX/
 
 # Enabled when deployment site in server dev
-#plugins/
-#uploads/
+plugins/
+uploads/
 
 # OS generated files #
 ######################
