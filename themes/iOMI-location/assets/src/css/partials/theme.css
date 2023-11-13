@@ -299,3 +299,16 @@
 .um-account-heading{
     display: none !important;
 }
+
+.um-logout{
+    .um-misc-with-img{
+        display: none;
+    }
+    .um-misc-ul{
+        li{
+            &:first-child{
+                display: none;
+            }
+        }
+    }
+}

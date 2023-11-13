@@ -126,20 +126,6 @@ p {
 # Links
 --------------------------------------------------------------*/
 
-a {
-    color: royalblue;
-}
-
-a:visited {
-    color: purple;
-}
-
-a:hover,
-a:focus,
-a:active {
-    color: midnightblue;
-}
-
 a:focus {
     outline: thin dotted;
 }
