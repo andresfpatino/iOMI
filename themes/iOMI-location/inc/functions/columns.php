@@ -9,9 +9,10 @@ function reorganizar_agregar_columna_estado($columns) {
     $columns['numero_documento'] = 'Cód. Doc. Identidad';
     $columns['menu_seleccionado'] = 'Menú Seleccionado';
     $columns['estado'] = 'Estado';
+    $columns['fecha_pedido'] = 'Fecha de entrega';
 
     // Agregar nuevamente la columna de fecha al final
-    $columns['date'] = $date_column;
+    $columns['date'] = 'Fecha del pedido';
 
     return $columns;
 }
@@ -35,5 +36,11 @@ function mostrar_valores_columnas_personalizadas_estado($column, $post_id) {
         }
 
         echo $estado_etiqueta;
+    } elseif ($column === 'fecha_pedido') {
+        setlocale(LC_TIME, 'es_ES.UTF-8');
+        $fecha_pedido =  get_post_meta($post_id, 'fecha_pedido', true);
+        $fecha = date_create_from_format('Y-m-d', $fecha_pedido);
+        $fecha_formateada = strftime('%e de %B %Y', $fecha->getTimestamp());
+        echo $fecha_formateada;
     }
 }

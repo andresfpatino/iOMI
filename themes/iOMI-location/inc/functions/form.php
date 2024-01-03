@@ -42,6 +42,7 @@ function custom_post_form_submission() {
         update_post_meta($post_id, 'postre', sanitize_text_field($_POST['postre'] ?? ''));
         update_post_meta($post_id, 'bebida', sanitize_text_field($_POST['bebida'] ?? ''));
         update_post_meta($post_id, 'comida_rapida', sanitize_text_field($_POST['comida_rapida'] ?? ''));
+        update_post_meta($post_id, 'fecha_pedido', sanitize_text_field($_POST['fecha_pedido'] ?? ''));
                
         // Cuerpo del mensaje con formato HTML y estilos
         $message = "<html><body>";

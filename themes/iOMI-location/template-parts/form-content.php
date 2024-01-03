@@ -104,5 +104,7 @@
         <input type="hidden" name="comida_rapida" value="<?php echo esc_html(ucfirst(strtolower($comida_rapida->post_title))); ?>">
     <?php endif; ?>
 
+    <input type="hidden" name="fecha_pedido" value="<?php echo $fecha_seleccionada; ?>">
+
     <button type="submit"><?php _e('Solicitar pedido', 'iOMI'); ?>   </button>
 </form>

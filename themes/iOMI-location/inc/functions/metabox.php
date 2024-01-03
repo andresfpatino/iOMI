@@ -14,6 +14,7 @@ add_action('add_meta_boxes', 'agregar_metabox');
 
 function mostrar_metabox_pedido($post) {
 
+    
     $nombre_completo = $post->post_title;
     $codigo_documento = get_post_meta($post->ID, 'documento', true); 
     $menu = get_post_meta($post->ID, 'menu', true);
@@ -27,7 +28,17 @@ function mostrar_metabox_pedido($post) {
     $postre = get_post_meta($post->ID, 'postre', true);
     $bebida = get_post_meta($post->ID, 'bebida', true);
     $comida_rapida =  get_post_meta($post->ID, 'comida_rapida', true);
+    setlocale(LC_TIME, 'es_ES.UTF-8');
+    $fecha_pedido =  get_post_meta($post->ID, 'fecha_pedido', true);
+    $fecha = date_create_from_format('Y-m-d', $fecha_pedido);
+    $fecha_EntregaFormateada = strftime('%e de %B %Y', $fecha->getTimestamp());
 
+    $fecha_publicacion = date_create($post->post_date);
+    $fecha_Pedidoformateada = date_format($fecha_publicacion, 'd/m/Y \a \l\a\s H:i');
+    
+
+    echo "<p><strong>Fecha del pedido: </strong>" . $fecha_Pedidoformateada . "</p>"; 
+    echo "<p><strong>Fecha de entrega: </strong>" . $fecha_EntregaFormateada . "</p>"; 
     echo "<p><strong>Nombre Completo: </strong>" . esc_attr($nombre_completo) . "</p>";
     echo "<p><strong>Código / Documento: </strong>" . esc_attr($codigo_documento) . "</p>";
     echo "<p><strong>Menu seleccionado: </strong>" . esc_attr($menu) . "</p>";
